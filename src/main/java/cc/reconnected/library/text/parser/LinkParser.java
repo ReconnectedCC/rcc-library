@@ -1,6 +1,6 @@
 package cc.reconnected.library.text.parser;
 
-import cc.reconnected.library.RccLib;
+import cc.reconnected.library.RccLibrary;
 import cc.reconnected.library.text.Placeholder;
 import eu.pb4.placeholders.api.node.DirectTextNode;
 import eu.pb4.placeholders.api.node.LiteralNode;
@@ -51,12 +51,12 @@ public class LinkParser implements NodeParser {
                 );
 
                 var display = Placeholder.parse(
-                        RccLib.CONFIG.link,
+                        RccLibrary.CONFIG.link,
                         placeholders
                 );
 
                 var hover = Placeholder.parse(
-                        RccLib.CONFIG.linkHover,
+                        RccLibrary.CONFIG.linkHover,
                         placeholders
                 );
 

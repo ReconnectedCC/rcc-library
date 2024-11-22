@@ -1,6 +1,6 @@
 package cc.reconnected.library.config;
 
-import cc.reconnected.library.RccLib;
+import cc.reconnected.library.RccLibrary;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import net.fabricmc.loader.api.FabricLoader;
@@ -57,7 +57,7 @@ public class ConfigManager {
         try (var fw = new FileWriter(path.toFile(), StandardCharsets.UTF_8)) {
             fw.write(json);
         } catch (Exception e) {
-            RccLib.LOGGER.error("Error saving {} config file.", id, e);
+            RccLibrary.LOGGER.error("Error saving {} config file.", id, e);
         }
     }
 }

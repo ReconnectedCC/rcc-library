@@ -1,6 +1,6 @@
 package cc.reconnected.library.text.parser;
 
-import cc.reconnected.library.RccLib;
+import cc.reconnected.library.RccLibrary;
 import cc.reconnected.library.text.Placeholder;
 import eu.pb4.placeholders.api.node.TextNode;
 import eu.pb4.placeholders.api.node.parent.ClickActionNode;
@@ -37,8 +37,8 @@ public class MarkdownComponentParser {
                 "label", TextNode.wrap(textNodes).toText(),
                 "url", url.toText()
         );
-        var text = Placeholder.parse(RccLib.CONFIG.link, placeholders);
-        var hover = Placeholder.parse(RccLib.CONFIG.linkHover, placeholders);
+        var text = Placeholder.parse(RccLibrary.CONFIG.link, placeholders);
+        var hover = Placeholder.parse(RccLibrary.CONFIG.linkHover, placeholders);
 
         return new HoverNode<>(TextNode.array(
                 new ClickActionNode(
