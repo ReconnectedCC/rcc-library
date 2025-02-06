@@ -163,10 +163,14 @@ public class PlayerMeta {
     }
 
     public static PlayerMeta getPlayer(ServerPlayerEntity player) {
-        var user = luckPerms().getPlayerAdapter(ServerPlayerEntity.class).getUser(player);
-        var playerData = new PlayerMeta(player.getUuid(), user);
-        playerData.name = player.getEntityName();
-        return playerData;
+        try {
+            var user = luckPerms().getPlayerAdapter(ServerPlayerEntity.class).getUser(player);
+            var playerData = new PlayerMeta(player.getUuid(), user);
+            playerData.name = player.getEntityName();
+            return playerData;
+        } catch (IllegalStateException e) {
+            return getPlayer(player.getUuid());
+        }
     }
 
     public static NodeBuilder<?, ?> node(String key) {
