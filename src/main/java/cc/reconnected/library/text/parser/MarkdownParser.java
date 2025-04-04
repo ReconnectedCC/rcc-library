@@ -1,10 +1,8 @@
 package cc.reconnected.library.text.parser;
 
 import eu.pb4.placeholders.api.parsers.MarkdownLiteParserV1;
+import eu.pb4.placeholders.api.parsers.MarkdownLiteParserV1.MarkdownFormat;
 import eu.pb4.placeholders.api.parsers.NodeParser;
-
-import static eu.pb4.placeholders.api.parsers.MarkdownLiteParserV1.MarkdownFormat;
-
 
 public class MarkdownParser {
     public static final MarkdownFormat[] ALL = new MarkdownFormat[]{
@@ -20,7 +18,7 @@ public class MarkdownParser {
     public static final NodeParser defaultParser = createParser(ALL);
 
     public static NodeParser createParser(MarkdownFormat[] capabilities) {
-        var mdParser =  new MarkdownLiteParserV1(
+        var mdParser = new MarkdownLiteParserV1(
                 MarkdownComponentParser::spoilerFormatting,
                 MarkdownComponentParser::quoteFormatting,
                 MarkdownComponentParser::urlFormatting,

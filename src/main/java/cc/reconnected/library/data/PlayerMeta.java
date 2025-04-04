@@ -166,7 +166,7 @@ public class PlayerMeta {
         try {
             var user = luckPerms().getPlayerAdapter(ServerPlayerEntity.class).getUser(player);
             var playerData = new PlayerMeta(player.getUuid(), user);
-            playerData.name = player.getEntityName();
+            playerData.name = player.getNameForScoreboard();
             return playerData;
         } catch (IllegalStateException e) {
             return getPlayer(player.getUuid());
